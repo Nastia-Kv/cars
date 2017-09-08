@@ -1,14 +1,24 @@
-public class Person {
+import java.util.Map;
 
-    int damage = 100;
+public class Person {
+    private String name;
+
 
     public Person(String name) {
+        this.name = name;
+        Map<String, Vehicle> vehicle;
+
     }
 
-    public void rideVehicle(String name) {
-        System.out.println("Riding a vehicle damages " + name);
-        damage--;
-        System.out.println(name + " got " + damage + " damage");
+    public void rideVehicle(Vehicle vehicle){
+        vehicle.ride(vehicle);
+
+    }
+
+    public void callService(RepairService service, String carName) {
+        service.repair(carName);
+        System.out.println(carName + " was fixed by the service");
+
     }
 
 

@@ -20,8 +20,8 @@ public class Main {
         vehicle.put("Godzilla", truck);
         vehicle.put("Hawk", helicopter);
 
-        person.rideVehicle("BMW");
         car.repairVehicle(car, "Honda");
+        car.ride();
 
     }
 }
