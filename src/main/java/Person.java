@@ -3,39 +3,34 @@ import java.util.Map;
 
 public class Person {
     public Person() {
-        this.vehicle = vehicle;
-        vehicle.put("BMW", car);
-        vehicle.put("Mercedes", car1);
-        vehicle.put("Honda", car2);
-        vehicle.put("Freedom", boat);
-        vehicle.put("Pegasus", boat1);
-        vehicle.put("Beast", truck);
-        vehicle.put("Godzilla", truck1);
+        Car car1 = new Car();
+        Car car2 = new Car();
+        Car car3 = new Car();
+        Boat boat1 = new Boat();
+        Boat boat2 = new Boat();
+        Truck truck1 = new Truck();
+        Truck truck2 = new Truck();
+        Helicopter helicopter = new Helicopter();
+        vehicle.put("BMW", car1);
+        vehicle.put("Mercedes", car2);
+        vehicle.put("Honda", car3);
+        vehicle.put("Freedom", boat1);
+        vehicle.put("Pegasus", boat2);
+        vehicle.put("Beast", truck1);
+        vehicle.put("Godzilla", truck2);
         vehicle.put("Hawk", helicopter);
     }
 
-    Map<String, Vehicle> vehicle = new HashMap<String, Vehicle>();
-
-    Vehicle car = new Car();
-    Vehicle car1 = new Car();
-    Vehicle car2 = new Car();
-    Vehicle boat = new Boat();
-    Vehicle boat1 = new Boat();
-    Vehicle helicopter = new Helicopter();
-    Vehicle truck = new Truck();
-    Vehicle truck1 = new Truck();
+    private Map<String, Vehicle> vehicle = new HashMap<String, Vehicle>();
 
 
-    public void rideVehicle(Vehicle vehicle) {
-        vehicle.ride();
-        System.out.println("Person rides a vehicle - " + vehicle);
+    public void rideVehicle(String carName) {
+        vehicle.get(carName).ride();
+        System.out.println("Person rides a vehicle - " + carName);
     }
 
-    public void callService(RepairService service, Vehicle vehicle) {
-        service.repair(vehicle);
-        System.out.println(vehicle + " was fixed by the service");
+    void callService(RepairService service, String carName) {
+        service.repair(vehicle.get(carName));
 
     }
-
-
 }
