@@ -28,12 +28,12 @@ public class Person {
 
     public void rideVehicle(Vehicle vehicle) {
         vehicle.ride();
-        System.out.println("Person rides a vehicle");
+        System.out.println("Person rides a vehicle - " + vehicle);
     }
 
-    public void callService(RepairService service, String carName) {
-        service.repair(carName);
-        System.out.println(carName + " was fixed by the service");
+    public void callService(RepairService service, Vehicle vehicle) {
+        service.repair(vehicle);
+        System.out.println(vehicle + " was fixed by the service");
 
     }
 

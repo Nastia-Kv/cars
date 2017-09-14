@@ -1,24 +1,24 @@
 public class RepairService {
-    private int damage = 100;
+    private int health = 0;
+    Vehicle vehicle = new Vehicle() {
+        @Override
+        public void ride() {
+            super.ride();
+        }
+    };
 
 
-//    public void repair(String carName) {
-//        if (damage != 0){
-//            System.out.println("After riding, the vehicle " + carName + " got repaired. Now damage is positive: ");
-//            System.out.println(++damage);
-//
-//        }
-//
-//    }
-
-    public void repair(String carName) {
-       while (damage >=0){
-           --damage;
-           System.out.println(damage + "damage");
-       }
-
+    public void repair(Vehicle vehicle) {
+        if (vehicle.damage > 0) {
+            health = vehicle.damage - vehicle.damage;
+            System.out.println("Service successfully repaired the " + vehicle);
+            System.out.println(health);
+        } else{
+            if (health == 0){
+                System.out.println("nothing");
+            }
+        }
     }
-
 
 }
 
